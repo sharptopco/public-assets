@@ -1,0 +1,80 @@
+<br>
+<br>
+<br>
+<html style="background-color: gray;">
+    <style>
+
+        @media only screen and (max-width: 900px) {
+
+            .flip-clock-wrapper {
+                width: 140px !important;
+                position: unset !important;
+                padding-left: calc(50% - 70px);
+            }
+
+            .flip-clock-divider {
+                display: block !important;
+                float: none !important;
+                position: unset !important;
+                height: unset !important;
+                width: 100% !important;
+                text-align: center !important;
+            }
+
+            .flip-clock-label {
+                position: unset !important;
+            }
+
+            .flip-clock-dot {
+                display: none !important;
+            }
+        }
+
+        @media only screen and (min-width: 900px) {
+            .flip-clock-wrapper {
+                padding-left: calc(50% - 310px);
+            }    
+        }
+
+        .flip-clock-label {
+            font-size: 2em;
+            font-weight: bold;
+            color: #EEE !important;
+        }
+
+        .flip-clock-divider.days .flip-clock-label {
+            right: -95px;
+        }
+    
+        .flip-clock-divider.hours .flip-clock-label {
+            right: -100px;
+        }
+    
+        .flip-clock-divider.minutes .flip-clock-label {
+            right: -109px !important;
+        }
+    
+        .flip-clock-divider.seconds .flip-clock-label {
+            right: -114px !important;
+        }
+    </style>
+    <link type="text/css" rel="stylesheet" href="https://sharptopco.github.io/public-assets/clock_assets/flipclock.css" />
+    <div class="clock-builder-output"></div>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://sharptopco.github.io/public-assets/clock_assets/flipclock.js"></script>
+    <style text="text/css">body .flip-clock-wrapper ul li a div div.inn, body .flip-clock-small-wrapper ul li a div div.inn { color: #EEE; background-color: #b32326; } body .flip-clock-dot, body .flip-clock-small-wrapper .flip-clock-dot { background: #b32326; } body .flip-clock-wrapper .flip-clock-meridium a, body .flip-clock-small-wrapper .flip-clock-meridium a { color: #b32326; }</style>
+    <script type="text/javascript">
+    $(function(){
+        FlipClock.Lang.Custom = { days:'Days', hours:'Hours', minutes:'Minutes', seconds:'Seconds' };
+        var opts = {
+            clockFace: 'DailyCounter',
+            countdown: true,
+            language: 'Custom'
+        };  
+        var countdown = 1615150800 - ((new Date().getTime())/1000); // from: 03/07/2021 04:00 pm -0500
+        countdown = Math.max(1, countdown);
+        $('.clock-builder-output').FlipClock(countdown, opts);
+    });
+    </script>
+    
+</html>
